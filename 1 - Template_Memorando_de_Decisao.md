@@ -46,25 +46,22 @@ Timestamp(registro exato de milissegundos em que o pacote ICMP passou pela rede)
 **Resumo do que foi encontrado:**
 A API do RIPE Atlas pode ser uma boa opção para o projeto, pois permite trabalhar com medições reais de rede. Os resultados de medições do tipo ping possuem informações que podem ser usadas para analisar latência e perda de pacotes. Outro ponto positivo é de poder utilizar medições realizadas por diferentes sondas, permitindo trabalhar com dados de diferentes localidades. (RIPE Atlas — Ping Statistics e RIPE Atlas — What is RIPE Atlas? (https://atlas.ripe.net/docs/apis/rest-api-reference/measurements/measurements_ping_stats)
 
-Autenticação via API Key
-Endpoints POST (criar) e GET (recuperar resultados)
-Exemplos de payload e resposta JSON
-Sistema de créditos (50/mês grátis)
+[Escreva aqui, citando a fonte consultada]
 
 ## 4. Comparação
 
 
 
 | Critério | Opção A — Dataset real | Opção B — API RIPE Atlas |
-|----------|------------------------|--------------------------|
-| Controle sobre a coleta                          | baixo, são dados previamente gerados em ambientes simulados sendo assim não é feito o controle direto de onde ou quando o trafegpo/dado foi coletado| Alto - É possivel comprolar a medição definindo o tipo de teste, destino, quantidade de pacotes e sondas uitizadas       |
-| Diversidade geográfica                           |É limitada ao ambinete que o dataset foi construidos. Os conjuntos analisados são voltados principalmente para cenários específicos de IoT, SDN e tráfego ICMP.  |A utilização de diferentes sondas do RIPE Atlas permite medições a partir de diferentes pontos da rede e localidades.|
-| Custo / complexidade de implementação            |Os arquivos já estão disponíveis em formatos como CSV e PCAP, possibilitando análise direta sem necessidade de desenvolver um mecanismo de coleta |Exige integração com a API, autenticação por API Key, criação de requisições HTTP, processamento de respostas JSON e gerenciamento dos créditos disponíveis.|
-| Tempo até os primeiros dados estarem disponíveis |Imediato. Após o download do dataset, os dados podem ser utilizados diretamente no projeto.|Rápido, porém dependente da execução das medições. É necessário configurar a requisição, criar a medição e aguardar a geração dos resultados pelas sondas.|
+|---|---|---|
+| Controle sobre a coleta | | |
+| Diversidade geográfica | | |
+| Custo / complexidade de implementação | | |
+| Tempo até os primeiros dados estarem disponíveis | | |
 
 ## 5. Recomendação
 
-Recomenda-se a utilização da API do RIPE Atlas como fonte de dados para o projeto, devido à possibilidade de trabalhar com medições reais de rede e obter dados de diferentes localidades
+<!-- Uma frase direta: qual opção você recomenda. -->
 
 
 ## 6. Justificativa
@@ -73,7 +70,9 @@ A API do RIPE Atlas é adequada ao projeto porque permite trabalhar com mediçõ
 
 ## 7. Riscos e limitações
 
-Entre os principais riscos estão a necessidade de integração com a API, o tratamento dos dados recebidos e a possível necessidade de créditos para a realização de novas medições. Também podem ocorrer variações nos resultados devido às condições da rede durante as medições. Para reduzir esses riscos, o grupo pode utilizar inicialmente resultados de medições já existentes para testar o processamento dos dados e, posteriormente, realizar novas medições conforme a necessidade do projeto.
+<!-- O que pode dar errado com a opção escolhida, e como isso poderia ser mitigado. -->
+
+[Escreva aqui]
 
 ## 8. Contribuição Individual dos Integrantes
 
@@ -92,25 +91,47 @@ Rodrigo - efetuei a pesquisa sobre o data set real, auxiliei na comparação e j
 `[]` 
 `[]`
 
-### Integrante 2 — `Rodrigo Camargo Vieira`
-- **O que fez nesta etapa:** `Pesquisa e documentação Dataset Real`
-- **Tempo dedicado (aprox.):** 1h30
+### Integrante 2 — `[Escreva nome completo do aluno ]`
+- **O que fez nesta etapa:** `[]`
+- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
 - **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
 `[]` 
 `[]`
 
 ### Integrante 3 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `analisei as alternativas de fonte de dados para o projeto, comparei o uso de dataset real e da API do RIPE Atlas, considerando controle sobre a coleta, complexidade de implementação e disponibilidade dos dados. Também analisei os benefícios, riscos e limitações das alternativas e elaborei breve resumo do que encontrei a respeito.`
-- **Tempo dedicado (aprox.):** 4h30
+- **O que fez nesta etapa:** `[]`
+- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
 - **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
 `[]` 
 `[]`
 
+### Integrante 4 — `[Escreva nome completo do aluno ]`
+- **O que fez nesta etapa:** `[]`
+- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
+- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
+`[]` 
+`[]`
+
+### Integrante 5 — `[Escreva nome completo do aluno ]`
+- **O que fez nesta etapa:** `[]`
+- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
+- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
+`[]` 
+`[]`
+
+### Integrante 6 — `[Escreva nome completo do aluno ]`
+- **O que fez nesta etapa:** `[]`
+- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
+- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
+`[]` 
+`[]`
+
+---
+
 ## Fontes consultadas
 
+<!-- Mínimo de 3 fontes. Liste todas as páginas de documentação, artigos ou repositórios usados. -->
 
- https://www.openaire.eu/zenodo-guide, https://datamanagement.hms.harvard.edu/share-publish/data-repositories/zenodo, https://zenodo.org/records/7772015
-medições reais de latência Round-Trip Time (RTT) https://portalinvestigacion.upct.es/datos/69a55c918c94a2342eb6b5a2?lang=en&utm_source=chatgpt.com
-RIPE Atlas Documentation — What is RIPE Atlas? https://atlas.ripe.net/docs/getting-started/what-is-ripe-atlas
-RIPE Atlas Documentation — Creating Measurements https://atlas.ripe.net/docs/apis/rest-api-manual/measurements/creating-measurements/
-RIPE Atlas Documentation — GET /measurements/{msm}/ping-stats/https://atlas.ripe.net/docs/apis/rest-api-reference/measurements/measurements_ping_stats 4.RIPE Atlas Documentation — Ping Statistics — https://atlas.ripe.net/docs/apis/rest-api-reference/measurements/measurements_ping_stats
+1. [ ]
+2. [ ]
+3. [ ]
