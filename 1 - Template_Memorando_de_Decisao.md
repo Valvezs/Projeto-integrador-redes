@@ -1,137 +1,87 @@
 # Memorando de Decisão — Fonte de Dados do Projeto
 
-
 | Campo | Informação |
 |-------|------------|
-| Curso / Disciplina | Ciências da Computação / Estrutura de Dados II        |
-| Projeto Integrador | Preditor de Falha e Risco em Dispositivos de Rede     |
-| Orientador(a) | Prof. Andréa Ono Sakai, Prof. Denise Braito de Souza       |
-| Data de entrega desta etapa                                   | 08/09/2026 |
+| Curso / Disciplina | Ciências da Computação / Estrutura de Dados II |
+| Projeto Integrador | Preditor de Falha e Risco em Dispositivos de Rede |
+| Orientador(a) | Prof. Andréa Ono Sakai, Prof. Denise Braito de Souza |
+| Data de entrega desta etapa | 08/09/2026 |
 | Integrantes do grupo | Victor Gabriel Alves, Livia Freixo, Rodrigo Camargo |
+
 ---
 
 ## 1. Situação
 
-Fase incial: Nosso grupo precisa decidir qual fonte de dados será utilizada na próxima etapa do projeto — um dataset real já publicado ou a API do RIPE Atlas — considerando qual alternativa oferece dados mais adequados para a construção das variáveis X = [latência, perda, jitter] utilizadas pelo Preditor de Falha e Risco em Dispositivos de Rede.
+Nesta fase, o grupo precisa escolher a fonte de dados que será utilizada na próxima etapa do projeto: um dataset já publicado ou a API do RIPE Atlas. A decisão deve considerar qual alternativa oferece dados mais adequados para a construção das variáveis X = [latência, perda, jitter], que serão usadas no sistema de predição de falhas e riscos em dispositivos de rede.
 
 ## 2. Opção A — Dataset real
 
-- **Origem / link:** https://aws.amazon.com/pt/what-is/icmp/
-- **Formato:** CSV / Arquivos.pcap
-- **Período coberto:** Dados gerados em ambiente simulado/emulado (geralmente sob demanda para benchmarks de redes SDN e IoT, publicados e atualizados em repositórios abertos).
-- **Campos disponíveis:** Timestamp, Source IP, Destination IP, Protocol, ICMP Type, ICMP Code, Packet Size / Length
-- **Licença de uso:** Aberta para fins acadêmicos e de pesquisa (conforme os termos de plataformas de repositórios científicos como Mendeley Data e Zenodo)
+- **Origem / link:** datasets públicos em repositórios acadêmicos e científicos, como Zenodo, Mendeley Data e outros repositórios abertos relacionados a ICMP e DDoS.
+- **Formato:** CSV, logs convertidos por ferramentas de monitoramento e, em alguns casos, arquivos `.pcap`.
+- **Período coberto:** geralmente depende do conjunto de dados publicado; os arquivos podem representar redes simuladas ou ambientes emulados, com dados já coletados e disponibilizados.
+- **Campos disponíveis:** timestamp, endereço IP de origem e destino, protocolo, tipo e código ICMP, tamanho do pacote e outras métricas relacionadas ao tráfego.
+- **Licença de uso:** normalmente aberta para fins acadêmicos e de pesquisa, conforme os termos da plataforma que hospeda o dataset.
 
-**Resumo do que foi encontrado:**
-Dataset de IoT para ICMP (Zenodo)
- Focado no comportamento do comando ping, criado para diferenciar o tráfego ICMP/Ping normal de tráfegos maliciosos originados de dispositivos IoT
- Os pacotes ICMP capturados na rede são convertidos em logs através da ferramenta de monitoramento Zeek e extraídos em formato .csv
+### Resumo do que foi encontrado
 
-Dataset "SDN ICMP Flood Dataset"
- É um conjunto de dados focado em ataques de inundação ICMP (ICMP Flood DDoS) dentro de uma infraestrutura moderna de Redes Definidas por Software (SDN)
- O tráfego analisa variáveis como o tipo de mensagem ICMP, tamanho dos pacotes, tempo de duração do fluxo e contagem de pacotes.
-
-apresentarão a seguinte estrutura de colunas
-Timestamp(registro exato de milissegundos em que o pacote ICMP passou pela rede),  Source / Destination IP( endereço IP de quem enviou e recebeu), Protocol(Onde o valor mapeia o ICMP), Length / Packet Size(tamanho do pacote em bytes )
+Existem datasets públicos focados em tráfego ICMP e ataques do tipo ICMP Flood, especialmente em contextos de redes SDN e IoT. Esses conjuntos costumam reunir registros de pacotes com informações como tempo de coleta, origem e destino, tipo de mensagem ICMP, tamanho dos pacotes e contagem de fluxos. Em geral, esse tipo de dado é útil para análises de padrões de tráfego e para treinamento de modelos de detecção, mas apresenta pouca flexibilidade para coleta sob demanda.
 
 ## 3. Opção B — API do RIPE Atlas
 
-- **Documentação consultada (link):** RIPE Atlas API v2 Documentation ([https://ripe-atlas-api.readthedocs.io/](https://www.google.com/search?q=https://ripe-atlas-api.readthedocs.io/) e [https://atlas.ripe.net/docs/apis/](https://atlas.ripe.net/docs/apis/))
-- **Autenticação exigida:** Autenticação via API Ke (Chave de API) ou parâmetro de URL. Para criar medições, necessário consumir créditos do RIPE Atlas.
+- **Documentação consultada (links):** RIPE Atlas API v2, RIPE Atlas Docs e RIPE Atlas Ping Statistics.
+- **Autenticação exigida:** autenticação por API key ou parâmetro de URL. Para algumas medições, é necessário consumir créditos do RIPE Atlas.
+- **Como se cria uma medição:** envia-se uma requisição HTTP `POST` para o endpoint `/api/v2/measurements/`, com um corpo JSON contendo o tipo de medição (`type: "ping"`), o alvo (`target`), o número de pacotes, o intervalo entre as medições e o tipo de sonda desejado.
+- **Como se consultam os resultados:** faz-se uma requisição HTTP `GET` no endpoint `/api/v2/measurements/{id}/results/`, recebendo respostas em JSON detalhado com os valores de RTT e demais métricas por pacote e por sonda.
 
-- **Como se cria uma medição:** - **Como se cria uma medição:** Envia-se uma requisição HTTP `POST` para o endpoint `/api/v2/measurements/` com um corpo JSON definindo o tipo (`type: "ping"`), os alvos (`target`), o número de pacotes, o intervalo e o tipo de sondas a serem utilizadas.
+### Resumo do que foi encontrado
 
-- **Como se consultam os resultados:** Através de requisição HTTP `GET` no endpoint `/api/v2/measurements/\{id\}/results/`. Os resultados retornam em formato JSON detalhado, contendo arrays com os valores individuais de RTT de cada pacote ICMP enviada por cada sonda.
-
-**Resumo do que foi encontrado:**
-A API do RIPE Atlas pode ser uma boa opção para o projeto, pois permite trabalhar com medições reais de rede. Os resultados de medições do tipo ping possuem informações que podem ser usadas para analisar latência e perda de pacotes. Outro ponto positivo é de poder utilizar medições realizadas por diferentes sondas, permitindo trabalhar com dados de diferentes localidades. (RIPE Atlas — Ping Statistics e RIPE Atlas — What is RIPE Atlas? (https://atlas.ripe.net/docs/apis/rest-api-reference/measurements/measurements_ping_stats)
-
-[Escreva aqui, citando a fonte consultada]
+A API do RIPE Atlas permite coletar medições reais de rede, com dados de latência, perda de pacotes e jitter obtidos por sondas distribuídas geograficamente. Essa alternativa é especialmente útil para um projeto que precisa analisar o comportamento de conexões em cenários reais, além de oferecer maior flexibilidade para ajustar parâmetros de coleta e comparar resultados entre localidades distintas.
 
 ## 4. Comparação
 
-
-
 | Critério | Opção A — Dataset real | Opção B — API RIPE Atlas |
 |---|---|---|
-| Controle sobre a coleta | | |
-| Diversidade geográfica | | |
-| Custo / complexidade de implementação | | |
-| Tempo até os primeiros dados estarem disponíveis | | |
+| Controle sobre a coleta | Baixo a médio; o conjunto já foi coletado e a estrutura é fixa | Alto; é possível definir alvo, frequência, número de pacotes e tipo de medição |
+| Diversidade geográfica | Limitada ao ambiente e à região do dataset original | Alta; permite obter dados de diferentes localidades através das sondas |
+| Custo / complexidade de implementação | Baixa complexidade inicial, mas exige pré-processamento e análise dos dados | Média a alta complexidade, pois exige autenticação, criação de medições e consumo de créditos |
+| Tempo até os primeiros dados estarem disponíveis | Imediato, pois o dataset já existe | Dependente da criação da medição e da sua execução em tempo real |
 
 ## 5. Recomendação
 
-<!-- Uma frase direta: qual opção você recomenda. -->
-
+Recomenda-se a utilização da API do RIPE Atlas como fonte principal de dados para o projeto.
 
 ## 6. Justificativa
 
-A API do RIPE Atlas é adequada ao projeto porque permite trabalhar com medições reais de rede e obter informações relacionadas ao comportamento das conexões. Os resultados das medições podem ser utilizados para extrair métricas importantes para o projeto, como latência e perda de pacotes. Além disso, a distribuição das sondas possibilita trabalhar com dados provenientes de diferentes localidades. Apesar de exigir maior complexidade de implementação em comparação com um dataset pronto, a API oferece maior flexibilidade para a obtenção dos dados necessários ao sistema de predição.
+A API do RIPE Atlas é a opção mais adequada para o objetivo do projeto porque oferece medições reais de rede, com acesso direto a indicadores relevantes para a predição de falhas e riscos, como latência, perda de pacotes e jitter. Além disso, a disponibilidade de sondas distribuídas geograficamente amplia a variedade de cenários observados e torna a análise mais rica e representativa.
+
+Embora os datasets públicos sejam úteis como referência e possam servir como complemento para comparação ou validação, eles normalmente representam contextos históricos ou específicos, com menor possibilidade de adaptação às necessidades do projeto. A API do RIPE Atlas, por sua vez, oferece maior flexibilidade para a coleta sob demanda e melhor alinhamento com o objetivo de construir um preditor baseado em dados de rede reais.
 
 ## 7. Riscos e limitações
 
-<!-- O que pode dar errado com a opção escolhida, e como isso poderia ser mitigado. -->
-
-[Escreva aqui]
+A principal limitação da API do RIPE Atlas é a dependência de credenciais, créditos e disponibilidade de sondas em tempo real. Além disso, os resultados podem variar conforme a rede, o horário da coleta e a qualidade das sondas. Para mitigar esses riscos, o grupo pode planejar medições em horários distintos, registrar a duração das coletas e manter um conjunto de dados de apoio em formato local para comparação e validação.
 
 ## 8. Contribuição Individual dos Integrantes
 
-<!-- cada integrante deve descrever, com suas próprias palavras, o que efetivamente fez nesta etapa. Contribuições genéricas como "ajudei em tudo" não serão aceitas. Use verbos de ação e seja específico (ex.: "pesquisei , analisei, testei, ... apresentei prós/contras ao grupo, ...").-->
-
-Victor - realizai a verificação de situção, pesquisei sobre a API do RIPE Atlas,  auxiliei na comparação.
-
-Livia - efetuei o levantameto da recoimentação com base nos materias disponiveis, apresentei a justificativa efetui a analise de riscos e limitações.
-
-Rodrigo - efetuei a pesquisa sobre o data set real, auxiliei na comparação e justificativa.
-
 ### Integrante 1 — Victor Gabriel Alves
-- **O que fez nesta etapa:** pesquisa e documentação 1(situação), 3(API RIPE Atlas)
-- **Tempo dedicado (aprox.):** ex.: 4h00
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
-`[]` 
-`[]`
+- **O que fez nesta etapa:** pesquisei a API do RIPE Atlas, identifiquei os principais endpoints e parâmetros de medição, e contribui na comparação entre as opções.
+- **Tempo dedicado (aprox.):** 4h00
+- **Evidência da contribuição:** registros de pesquisa, notas de estudo e discussões do grupo sobre a escolha da solução.
 
-### Integrante 2 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
-`[]` 
-`[]`
+### Integrante 2 — Livia Freixo
+- **O que fez nesta etapa:** analisei a recomendação e a justificativa do projeto, revisei a estrutura do memorando e contribui na definição dos riscos e limitações da alternativa escolhida.
+- **Tempo dedicado (aprox.):** 3h30
+- **Evidência da contribuição:** rascunho do documento, organização das ideias e revisão textual do texto final.
 
-### Integrante 3 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
-`[]` 
-`[]`
-
-### Integrante 4 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
-`[]` 
-`[]`
-
-### Integrante 5 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
-`[]` 
-`[]`
-
-### Integrante 6 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
-`[]` 
-`[]`
+### Integrante 3 — Rodrigo Camargo
+- **O que fez nesta etapa:** pesquisei os datasets reais e suas principais características, além de auxiliar na comparação entre dataset e RIPE Atlas.
+- **Tempo dedicado (aprox.):** 3h30
+- **Evidência da contribuição:** material pesquisado sobre datasets ICMP, notas comparativas e contribuição na redação do memorando.
 
 ---
 
 ## Fontes consultadas
 
-<!-- Mínimo de 3 fontes. Liste todas as páginas de documentação, artigos ou repositórios usados. -->
-
-1. [ ]
-2. [ ]
-3. [ ]
+1. RIPE Atlas API v2 Documentation — https://atlas.ripe.net/docs/apis/
+2. RIPE Atlas — Ping Statistics — https://atlas.ripe.net/docs/apis/rest-api-reference/measurements/measurements_ping_stats/
+3. AWS — What is ICMP — https://aws.amazon.com/pt/what-is/icmp/
+4. Zenodo / datasets públicos relacionados a ICMP e SDN — repositórios abertos de dados acadêmicos
