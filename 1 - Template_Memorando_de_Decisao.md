@@ -42,7 +42,7 @@ Fase incial: o nosso grupo precisa verificar a API do RIPE Atlas para a coleta d
 
 **Resumo do que foi encontrado:**
 
-[Escreva aqui, citando a fonte consultada]
+A API do RIPE Atlas pode ser uma boa opção para o projeto, pois permite trabalhar com medições reais de rede. Os resultados de medições do tipo ping possuem informações que podem ser usadas para analisar latência e perda de pacotes. Outro ponto positivo é de poder utilizar medições realizadas por diferentes sondas, permitindo trabalhar com dados de diferentes localidades. (RIPE Atlas — Ping Statistics e RIPE Atlas — What is RIPE Atlas? (https://atlas.ripe.net/docs/apis/rest-api-reference/measurements/measurements_ping_stats)
 
 ## 4. Comparação
 
@@ -50,28 +50,24 @@ Fase incial: o nosso grupo precisa verificar a API do RIPE Atlas para a coleta d
 
 | Critério | Opção A — Dataset real | Opção B — API RIPE Atlas |
 |---|---|---|
-| Controle sobre a coleta | | |
-| Diversidade geográfica | | |
-| Custo / complexidade de implementação | | |
-| Tempo até os primeiros dados estarem disponíveis | | |
+| Controle sobre a coleta | Limitado, pois os dados já foram coletados anteriormente.| Maior controle, pois permite consultar medições e configurar novas medições.|
+| Diversidade geográfica | | Alta, devido à distribuição das sondas do RIPE Atlas.|
+| Custo / complexidade de implementação |Menor complexidade inicial, pois os dados já estão disponíveis. |Maior complexidade, pois exige integração com a API e tratamento dos dados. |
+| Tempo até os primeiros dados estarem disponíveis || Pode ser rápido utilizando resultados de medições já existentes.|
 
 ## 5. Recomendação
 
-<!-- Uma frase direta: qual opção você recomenda. -->
+Recomenda-se a utilização da API do RIPE Atlas como fonte de dados para o projeto, devido à possibilidade de trabalhar com medições reais de rede e obter dados de diferentes localidades.
 
-[Escreva aqui]
 
 ## 6. Justificativa
 
-<!-- Por que essa opção vence a outra, com base nas evidências das seções 2, 3 e 4 — não em preferência pessoal. -->
-
-[Escreva aqui]
+A API do RIPE Atlas é adequada ao projeto porque permite trabalhar com medições reais de rede e obter informações relacionadas ao comportamento das conexões. Os resultados das medições podem ser utilizados para extrair métricas importantes para o projeto, como latência e perda de pacotes. Além disso, a distribuição das sondas possibilita trabalhar com dados provenientes de diferentes localidades. Apesar de exigir maior complexidade de implementação em comparação com um dataset pronto, a API oferece maior flexibilidade para a obtenção dos dados necessários ao sistema de predição.
 
 ## 7. Riscos e limitações
 
-<!-- O que pode dar errado com a opção escolhida, e como isso poderia ser mitigado. -->
+Entre os principais riscos estão a necessidade de integração com a API, o tratamento dos dados recebidos e a possível necessidade de créditos para a realização de novas medições. Também podem ocorrer variações nos resultados devido às condições da rede durante as medições. Para reduzir esses riscos, o grupo pode utilizar inicialmente resultados de medições já existentes para testar o processamento dos dados e, posteriormente, realizar novas medições conforme a necessidade do projeto.
 
-[Escreva aqui]
 
 ## 8. Contribuição Individual dos Integrantes
 
@@ -84,12 +80,10 @@ Fase incial: o nosso grupo precisa verificar a API do RIPE Atlas para a coleta d
 `[]` 
 `[]`
 
-### Integrante 2 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*:
-`[]` 
-`[]`
+### Integrante 2 — Livia Ribeiro Freixo
+- **O que fez nesta etapa:** analisei as alternativas de fonte de dados para o projeto, comparei o uso de dataset real e da API do RIPE Atlas, considerando controle sobre a coleta, complexidade de implementação e disponibilidade dos dados. Também analisei os benefícios, riscos e limitações das alternativas e elaborei breve resumo do que encontrei a respeito.
+- **Tempo dedicado (aprox.):** 
+- **Evidência da contribuição** 
 
 ### Integrante 3 — `[Escreva nome completo do aluno ]`
 - **O que fez nesta etapa:** `[]`
@@ -98,33 +92,14 @@ Fase incial: o nosso grupo precisa verificar a API do RIPE Atlas para a coleta d
 `[]` 
 `[]`
 
-### Integrante 4 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
-`[]` 
-`[]`
-
-### Integrante 5 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
-`[]` 
-`[]`
-
-### Integrante 6 — `[Escreva nome completo do aluno ]`
-- **O que fez nesta etapa:** `[]`
-- **Tempo dedicado (aprox.):** `[ex.: 3h30]`
-- **Evidência da contribuição** *(print de conversa, rascunho, e-mail, documento compartilhado etc.)*: 
-`[]` 
-`[]`
-
----
-
 ## Fontes consultadas
 
 <!-- Mínimo de 3 fontes. Liste todas as páginas de documentação, artigos ou repositórios usados. -->
-
-1. [ ]
-2. [ ]
-3. [ ]
+1. RIPE Atlas Documentation — What is RIPE Atlas?
+https://atlas.ripe.net/docs/getting-started/what-is-ripe-atlas
+2. RIPE Atlas Documentation — Creating Measurements
+https://atlas.ripe.net/docs/apis/rest-api-manual/measurements/creating-measurements/
+3. RIPE Atlas Documentation — GET /measurements/{msm}/ping-stats/https://atlas.ripe.net/docs/apis/rest-api-reference/measurements/measurements_ping_stats
+4.RIPE Atlas Documentation — Ping Statistics — https://atlas.ripe.net/docs/apis/rest-api-reference/measurements/measurements_ping_stats
+5.
+6.
