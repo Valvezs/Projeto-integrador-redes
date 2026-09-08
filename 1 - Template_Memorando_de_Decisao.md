@@ -12,7 +12,7 @@
 
 ## 1. Situação
 
-Nesta etapa do projeto, o grupo precisa selecionar a fonte de dados que será utilizada na próxima fase do desenvolvimento. A decisão deve considerar qual alternativa oferece informações mais adequadas para a construção das variáveis X = [latência, perda, jitter], necessárias ao sistema de predição de falhas e riscos em dispositivos de rede.
+Nesta etapa do projeto, o grupo precisa selecionar a fonte de dados que será utilizada na próxima fase do desenvolvimento. A decisão deve considerar qual alternativa oferece informações mais adequadas para a construção das variáveis X = [latência, perda, jitter], necessárias para o sistema de predição de falhas e riscos em dispositivos de rede.
 
 A análise comparativa será realizada entre duas opções: um dataset real já publicado e a API do RIPE Atlas. A escolha deve priorizar a qualidade, a relevância e a capacidade de coleta dos dados para o objetivo do projeto.
 
