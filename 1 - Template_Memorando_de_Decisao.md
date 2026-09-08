@@ -71,16 +71,24 @@ Para mitigar esses riscos, podemos planejar medições em horários distintos, r
 - **Tempo dedicado (aprox.):** 4h00
 - **Evidência da contribuição:** registros de pesquisa, notas de estudo e discussões do grupo sobre a escolha da solução.
 
+<img width="747" height="457" alt="image" src="https://github.com/user-attachments/assets/cf19ecee-842e-4929-a5e3-51dc91125ad5" />
+<img width="1235" height="622" alt="image" src="https://github.com/user-attachments/assets/6f4c17c6-72aa-4cf8-a8de-05377bb5b5cd" />
+
 ### Integrante 2 — Livia Freixo
 - **O que fez nesta etapa:** analisou a recomendação e a justificativa do projeto, revisou a estrutura do memorando e contribuiu na definição dos riscos e limitações da alternativa escolhida.
 - **Tempo dedicado (aprox.):** 3h30
 - **Evidência da contribuição:** rascunho do documento, organização das ideias e revisão textual do texto final.
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/6c0457e1-61a7-4b4e-a927-172e6204e9a8" />
+<img width="727" height="427" alt="image" src="https://github.com/user-attachments/assets/e40b5c7f-c7b2-4662-84d2-4ad6b26e57b5" />
 
 ### Integrante 3 — Rodrigo Camargo
 - **O que fez nesta etapa:** pesquisou os datasets reais e suas principais características, além de auxiliar na comparação entre dataset e RIPE Atlas.
 - **Tempo dedicado (aprox.):** 3h30
 - **Evidência da contribuição:** material pesquisado sobre datasets ICMP, notas comparativas e contribuição na redação do memorando.
----
+---<img width="730" height="245" alt="image" src="https://github.com/user-attachments/assets/d760c126-b974-4279-b94a-d8f6d5a0cb74" />
+
+<img width="827" height="855" alt="image" src="https://github.com/user-attachments/assets/88349a11-c9f0-4902-85c4-ce69d8dd1673" />
+
 ## Fontes consultadas
 
 1. RIPE Atlas API v2 Documentation — https://atlas.ripe.net/docs/apis/
