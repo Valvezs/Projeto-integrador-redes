@@ -62,7 +62,7 @@ Além disso, a presença de sondas distribuídas geograficamente amplia a repres
 
 A principal limitação da API do RIPE Atlas é a dependência de autenticação, créditos e disponibilidade de sondas em tempo real. Além disso, os resultados podem variar conforme o horário da coleta, a qualidade da rede e a localização da sonda utilizada.
 
-Para mitigar esses riscos, o grupo pode planejar medições em horários distintos, registrar a duração das coletas e manter um conjunto de dados de apoio em formato local para comparação e validação posterior.
+Para mitigar esses riscos, podemos planejar medições em horários distintos, registrar a duração das coletas e manter um conjunto de dados de apoio em formato local para comparação e validação posterior.
 
 ## 8. Contribuição Individual dos Integrantes
 
@@ -80,9 +80,7 @@ Para mitigar esses riscos, o grupo pode planejar medições em horários distint
 - **O que fez nesta etapa:** pesquisou os datasets reais e suas principais características, além de auxiliar na comparação entre dataset e RIPE Atlas.
 - **Tempo dedicado (aprox.):** 3h30
 - **Evidência da contribuição:** material pesquisado sobre datasets ICMP, notas comparativas e contribuição na redação do memorando.
-
 ---
-
 ## Fontes consultadas
 
 1. RIPE Atlas API v2 Documentation — https://atlas.ripe.net/docs/apis/
