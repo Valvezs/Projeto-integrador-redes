@@ -12,7 +12,7 @@
 
 ## 1. Situação
 
-Nesta etapa do projeto, o grupo precisa selecionar a fonte de dados que será utilizada na próxima fase do desenvolvimento. A decisão deve considerar qual alternativa oferece informações mais adequadas para a construção das variáveis X = [latência, perda, jitter], necessárias ao sistema de predição de falhas e riscos em dispositivos de rede.
+Nesta etapa do projeto, o grupo precisa selecionar a fonte de dados que será utilizada na próxima fase do desenvolvimento. A decisão deve considerar qual alternativa oferece informações mais adequadas para a construção das variáveis X = [latência, perda, jitter], necessárias para o sistema de predição de falhas e riscos em dispositivos de rede.
 
 A análise comparativa será realizada entre duas opções: um dataset real já publicado e a API do RIPE Atlas. A escolha deve priorizar a qualidade, a relevância e a capacidade de coleta dos dados para o objetivo do projeto.
 
@@ -62,7 +62,7 @@ Além disso, a presença de sondas distribuídas geograficamente amplia a repres
 
 A principal limitação da API do RIPE Atlas é a dependência de autenticação, créditos e disponibilidade de sondas em tempo real. Além disso, os resultados podem variar conforme o horário da coleta, a qualidade da rede e a localização da sonda utilizada.
 
-Para mitigar esses riscos, o grupo pode planejar medições em horários distintos, registrar a duração das coletas e manter um conjunto de dados de apoio em formato local para comparação e validação posterior.
+Para mitigar esses riscos, podemos planejar medições em horários distintos, registrar a duração das coletas e manter um conjunto de dados de apoio em formato local para comparação e validação posterior.
 
 ## 8. Contribuição Individual dos Integrantes
 
@@ -71,17 +71,23 @@ Para mitigar esses riscos, o grupo pode planejar medições em horários distint
 - **Tempo dedicado (aprox.):** 4h00
 - **Evidência da contribuição:** registros de pesquisa, notas de estudo e discussões do grupo sobre a escolha da solução.
 
+<img width="747" height="457" alt="image" src="https://github.com/user-attachments/assets/cf19ecee-842e-4929-a5e3-51dc91125ad5" />
+<img width="1235" height="622" alt="image" src="https://github.com/user-attachments/assets/6f4c17c6-72aa-4cf8-a8de-05377bb5b5cd" />
+
 ### Integrante 2 — Livia Freixo
 - **O que fez nesta etapa:** analisou a recomendação e a justificativa do projeto, revisou a estrutura do memorando e contribuiu na definição dos riscos e limitações da alternativa escolhida.
 - **Tempo dedicado (aprox.):** 3h30
 - **Evidência da contribuição:** rascunho do documento, organização das ideias e revisão textual do texto final.
+<img width="1917" height="1078" alt="image" src="https://github.com/user-attachments/assets/6c0457e1-61a7-4b4e-a927-172e6204e9a8" />
+<img width="727" height="427" alt="image" src="https://github.com/user-attachments/assets/e40b5c7f-c7b2-4662-84d2-4ad6b26e57b5" />
 
 ### Integrante 3 — Rodrigo Camargo
 - **O que fez nesta etapa:** pesquisou os datasets reais e suas principais características, além de auxiliar na comparação entre dataset e RIPE Atlas.
 - **Tempo dedicado (aprox.):** 3h30
 - **Evidência da contribuição:** material pesquisado sobre datasets ICMP, notas comparativas e contribuição na redação do memorando.
+---<img width="730" height="245" alt="image" src="https://github.com/user-attachments/assets/d760c126-b974-4279-b94a-d8f6d5a0cb74" />
 
----
+<img width="827" height="855" alt="image" src="https://github.com/user-attachments/assets/88349a11-c9f0-4902-85c4-ce69d8dd1673" />
 
 ## Fontes consultadas
 
