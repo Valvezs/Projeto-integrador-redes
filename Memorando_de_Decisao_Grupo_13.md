@@ -57,9 +57,9 @@ Por outro lado, utilizar a API exige um pouco mais de configuração. Também ex
 ## 4. Comparação
 
 | Critério | Opção A — Dataset real (Hats Network) | Opção B — API RIPE Atlas |
-|----------|---====================================|--------------------------|
+|----------|---------------------------------------|--------------------------|
 | **Controle sobre a coleta** | **Baixo:** utiliza medições já realizadas pela Hats Network. | **Alto:** permite configurar novas medições.|
-| **Diversidade geográfica** | **Alta:** 20 PoPs em diferentes continentes. | **Muito alta:** depende dos probes disponíveis e da configuração da medição.|
+| **Diversidade geográfica**  | **Alta:** 20 PoPs em diferentes continentes. | **Muito alta:** depende dos probes disponíveis e da configuração da medição.|
 | **Custo / complexidade de implementação** | **Baixo:** os dados já estão coletados e disponíveis em formatos estruturados. | **Maior:** é necessário utilizar a API e configurar/acompanhar medições.|
 | **Tempo até os primeiros dados estarem disponíveis** | **Imediato:** os dados já estão disponíveis para download. | **Maior:** é necessário criar a medição e aguardar sua execução.|
 
