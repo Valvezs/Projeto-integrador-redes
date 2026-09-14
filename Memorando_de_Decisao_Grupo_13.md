@@ -1,6 +1,6 @@
 # Memorando de Decisão — Fonte de Dados do Projeto
 
-| Campo | Informação     |---|
+| Campo | Informação     ||
 |-------|----------------|------------------------------------------------------|
 | **Curso / Disciplina** | Ciência da Computação / Estruturas de Dados II       |
 | **Projeto integrador** | Preditor de Falha e Risco em Dispositivos de Rede    |
